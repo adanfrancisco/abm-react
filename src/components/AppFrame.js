@@ -1,7 +1,8 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import AppHeader from './AppHeader';
 
-const AppFrame = ({header, body,footer}) => {
+const AppFrame = ({header, body/*,footer*/}) => {
     return (
         <div>
             <div className="app-frame">
@@ -15,8 +16,8 @@ const AppFrame = ({header, body,footer}) => {
 
 AppFrame.propTypes = {
     header: PropTypes.string.isRequired,
-    body: PropTypes.string.isRequired,
-    footer: PropTypes.string,
+    body: PropTypes.element.isRequired,
+    //footer: PropTypes.string,
 };
 
 export default AppFrame;
