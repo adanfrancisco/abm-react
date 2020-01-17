@@ -14,7 +14,9 @@ const CustomerData = ({name,dni,age}) => {
 };
 
 CustomerData.propTypes = {
-    
+    name: PropTypes.string.isRequired,
+    dni: PropTypes.string.isRequired,
+    age: PropTypes.number,
 };
 
 export default CustomerData;
