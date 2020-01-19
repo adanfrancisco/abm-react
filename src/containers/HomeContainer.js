@@ -1,12 +1,13 @@
 import React from 'react';
 //import PropTypes from 'prop-types';
-//import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import AppFrame from './../components/AppFrame';
 import CustomersActions  from './../components/CustomersActions';
 
 const HomeContainer = props => {
     const handleOnClick = () => {
         console.log('handleOnClick');
+        props.history.push('/customers')
     }
     return (
         <div>
@@ -25,5 +26,6 @@ const HomeContainer = props => {
         </div>
     );
 };
-
-export default HomeContainer;
+//withRouter sirve para inyectar los atriburos de router de
+//react dom su es llamado dentro de una función en el router
+export default withRouter(HomeContainer);
