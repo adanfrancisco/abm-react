@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import AppFrame from '../components/AppFrame';
 import CustomersList from '../components/CustomerList';
 import CustomersActions from '../components/CustomersActions';
+import { withRouter } from 'react-router-dom';
 
 const customers = [
     {
@@ -24,7 +25,9 @@ const customers = [
 
 const CustomersContainer = props => {
     // modificar
-    const handleAddNew = () => {};
+    const handleAddNew = () => {
+        props.history.push('/customer/add')
+    };
 
     const renderBody = customers => (
         <div>
@@ -53,4 +56,4 @@ CustomersContainer.propTypes = {
     
 };
 
-export default CustomersContainer;
+export default withRouter(CustomersContainer);
